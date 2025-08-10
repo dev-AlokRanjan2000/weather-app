@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(ellipse at top left, #1a2e4e 65%, #100e23 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Search Bar Styling --- */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.search input {
+  padding: 12px 20px;
+  width: 250px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #e6faff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5),
+              inset 0 0 4px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.search input::placeholder {
+  color: #9ee7ff;
+}
+
+.search input:focus {
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 16px #00eaff,
+              inset 0 0 6px rgba(255, 255, 255, 0.25);
+}
+
+.search button {
+  padding: 10px 16px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00d4ff 0%, #fe67fd 100%);
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 0 12px #00d4ff,
+              0 0 8px #fe67fd;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.search button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00eaff,
+              0 0 12px #fe67fd;
+}
+
+/* --- Suggestions Dropdown --- */
+.suggestions-list {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  list-style: none;
+  max-height: 160px;
+  overflow-y: auto;
+  margin-top: 5px;
+  padding: 0;
+  width: 250px;
+  position: absolute;
+  z-index: 100;
+  color: #fff;
+}
+
+.suggestions-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: rgba(0, 212, 255, 0.3);
+}
+
+/* --- Weather UI Card --- */
+.weather-ui {
+  border-radius: 32px;
+  box-shadow: 0 4px 32px #101440a8;
+  padding: 24px 16px 16px 16px;
+  background: linear-gradient(120deg,
+              rgba(17,18,41,0.88) 70%,
+              rgba(41,8,74,0.7) 100%);
+  min-width: 350px;
+  max-width: 400px;
+  position: relative;
+}
+
+.main-card {
+  border-radius: 24px;
+  background: linear-gradient(120deg, #352078 60%, #1a1867b0 100%);
+  box-shadow: 0 2px 16px #6053fa3b,
+              0 1px 8px #9b00cc40 inset;
+  margin-bottom: 14px;
+  padding: 18px;
+  text-align: center;
+}
+
+.location-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e3e9ff;
+  text-shadow: 0 0 6px #a782ff;
+}
+
+.clock {
+  color: #fcc9ff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-shadow: 0 0 6px #fd67fc90;
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-icon {
+  width: 64px;
+  filter: drop-shadow(0 0 14px #00d4ff)
+          drop-shadow(0 0 8px #fd67fc);
+}
+
+.temp {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #7cfff8;
+  text-shadow: 0 0 16px #07fafe80;
+}
+
+.desc {
+  color: #fffefd;
+  font-size: 1.06rem;
+  margin-top: 4px;
+  text-shadow: 0 0 4px #6e67fd91;
+}
+
+/* --- Weather Stats Section --- */
+.status-module {
+  background: linear-gradient(100deg,
+              #292977c1 65%,
+              #3900688c 100%);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 2px 18px #fd67fc35,
+              0 1px 5px #00d4ff45 inset;
+}
+
+.status-module h3 {
+  color: #fff;
+  font-size: 1.11rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 4px #fd67fc8b;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.stat {
+  flex: 1 1 0;
+  background: rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 7px;
+  text-align: center;
+  box-shadow: 0 0 10px #00d4ff30 inset;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: #a0eaff;
+}
+
+.value {
+  font-size: 0.96rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.stats img {
+  width: 24px;
+  filter: drop-shadow(0 0 7px #75e2ff);
+}
