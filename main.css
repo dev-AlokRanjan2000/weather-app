@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-  background-image: url(state/delhi.jpeg);
+  background-image: url(images/background.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;           /* makes image cover entire screen */
@@ -45,6 +45,7 @@ body::before {
   border-radius: 15px;
   backdrop-filter: blur(12px);
   padding: 20px;
+  margin-top: 150px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
